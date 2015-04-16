@@ -34,6 +34,7 @@ class Spider_Web(object):
             sql2 = u"update test.get_url set is_geted = '2' where url = '%s'" % (urls)
             cur.execute(sql2)
             conn.commit()
+            time.sleep(0.02)
         return Spider_Web().findMin()
     #数据库中查找最小的 没有爬行过的id ，再次爬行
     def findMin(self):
